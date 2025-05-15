@@ -92,19 +92,12 @@ To evolve this project into an end-to-end airline support agent:
 5. **Evaluation Metrics**: Implement automated evaluation (e.g., BLEU, ROUGE, or human-in-the-loop feedback) to quantify response quality.
 6. **Deployment**: Package the RAG system as a web or mobile app for real-world testing.
 
-## 🤝 Contributing
-We welcome contributions! Feel free to:
-- Submit pull requests for new features or bug fixes.
-- Share ideas for improving FAQ generation or RAG performance.
-- Add new chunking strategies or prompt templates to the experiments folder.
-
-Please read `CONTRIBUTING.md` for guidelines.
 
 ## 📜 License
 This project is licensed under the MIT License. See `LICENSE` for details.
 
 ## 📬 Contact
-For questions or feedback, reach out via GitHub Issues or email at [your-email@example.com].
+For questions or feedback, reach out via GitHub Issues or email at [palbhanazwale@gmail.com].
 
 ---
 
