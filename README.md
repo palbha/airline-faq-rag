@@ -1,4 +1,5 @@
 title: Airline FAQ RAG Project
+emoji: :)
 colorFrom: gray
 colorTo: indigo
 sdk: streamlit
