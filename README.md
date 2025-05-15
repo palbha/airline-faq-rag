@@ -1,3 +1,14 @@
+---
+title: My Cool Space
+emoji: 🚀
+colorFrom: indigo
+colorTo: pink
+sdk: gradio
+sdk_version: 5.29.1
+app_file: app.py
+pinned: false
+---
+
 # Airline FAQ RAG Project
 
 
