@@ -1,9 +1,8 @@
-title: Airline FAQ RAG Project
-emoji: :)
-colorFrom: gray
-colorTo: indigo
-sdk: streamlit
-sdk_version: 1.44.1
+title: {{title}}
+emoji: {{emoji}}
+colorFrom: {{colorFrom}}
+colorTo: {{colorTo}}
+sdk: {{sdk}}
+sdk_version: "{{sdkVersion}}"
 app_file: app.py
 pinned: false
-short_description: Airline FAQ Agent
