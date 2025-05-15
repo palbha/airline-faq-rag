@@ -1,4 +1,12 @@
 # Airline FAQ RAG Project
+title: Airline FAQ RAG Project
+colorFrom: gray
+colorTo: indigo
+sdk: streamlit
+sdk_version: 1.44.1
+app_file: app.py
+pinned: false
+short_description: Airline FAQ Agent
 
 Welcome to the **Airline FAQ RAG Project**! This repository houses an innovative pet project exploring the creation of airline-related FAQ data using an AI agent and building a Retrieval-Augmented Generation (RAG) application to provide accurate and context-aware responses. Whether you're an AI enthusiast, a developer, or someone curious about natural language processing (NLP) and information retrieval, this project offers insights into data generation, embedding strategies, and RAG system optimization.
 
