@@ -4,7 +4,6 @@ df=pd.read_csv("data/faq_data.csv")
 print(df)
 
 from openai import OpenAI
-from google.colab import userdata
 #Feel free to use chatgpt or other models - Google offere free gemini api hence I have used this
 
 
