@@ -75,8 +75,8 @@ def hybrid_retrieve(query, k=5):
             seen.add(key)
     return filtered
 
-def generate_answer(query,model_choice,api_key):
-    contexts = hybrid_retrieve(query, k=5)
+def generate_answer(message, chat_history, model_choice, api_key):
+    contexts = hybrid_retrieve(message, k=5)
     context_text = "\n\n".join([f"Q: {c['question']}\nA: {c.get('answer') or c.get('answer_chunk')}" for c in contexts])
 
     messages = [
@@ -91,7 +91,7 @@ def generate_answer(query,model_choice,api_key):
         },
         {
             "role": "user",
-            "content": f"Context:\n{context_text}\n\nQuestion: {query}\nAnswer:"
+            "content": f"Context:\n{context_text}\n\nQuestion: {message}\nAnswer:"
         }
     ]
     openai = OpenAI(
