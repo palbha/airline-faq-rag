@@ -1,6 +1,6 @@
 import pandas as pd
 import openai
-df=pd.read_csv("/data/faq_data.csv")
+df=pd.read_csv("data/faq_data.csv")
 print(df)
 
 from openai import OpenAI
