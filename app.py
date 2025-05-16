@@ -16,7 +16,7 @@ button:hover { background-color: #a01010; }
 
 # Model-specific response logic
 def get_response(message, chat_history, model_choice, api_key):
-    reply =generate_answer(query,model_choice,api_key)
+    reply =generate_answer(message,model_choice,api_key)
 
     chat_history.append((message, reply))
     return reply, chat_history
