@@ -1,5 +1,5 @@
 ---
-title: My Cool Space
+title: Airline FAQ RAG Project
 emoji: 🚀
 colorFrom: indigo
 colorTo: pink
