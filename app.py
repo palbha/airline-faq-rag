@@ -23,29 +23,38 @@ def get_response(message, chat_history, model_choice, api_key):
     print("Chat",chat_history)
     return chat_history
 # Gradio app
-with gr.Blocks(theme=gr.themes.Soft()) as app:
+with gr.Blocks(css=custom_css) as app:
     with gr.Row():
-        with gr.Column(scale=4):
-            chatbot = gr.Chatbot(label="Airline Assistant", height=400, type="messages")
-            message_input = gr.Textbox(placeholder="Ask me something...", label="Your question")
-            submit_btn = gr.Button("Send")
-        
         with gr.Column(scale=1):
-            model_choice = gr.Dropdown(["gpt-4", "gemini-1.5-flash"], label="Choose Model")
-            api_key_input = gr.Textbox(placeholder="Enter API Key", label="API Key", type="password")
+            gr.Markdown("## ⚙️ Model Configuration")
 
-    chat_history_state = gr.State([])
+            model_choice = gr.Dropdown(
+                label="Choose Model",
+                choices=["OpenAI GPT-4", "Gemini Pro", "Together AI"],
+                value="OpenAI GPT-4"
+            )
 
-    submit_btn.click(
-        fn=get_response,
-        inputs=[message_input, chat_history_state, model_choice, api_key_input],
-        outputs=[chatbot, chat_history_state]
-    )
+            api_key_input = gr.Textbox(
+                label="Enter API Key",
+                placeholder="Enter your OpenAI API key here...",
+                type="password"
+            )
+
+        with gr.Column(scale=3):
+            gr.Markdown("<h1>✈️ Qatar Airways Virtual Assistant</h1>")
+            chatbot = gr.Chatbot(label="Assistant", height=400,type="messages")
+            msg = gr.Textbox(label="Your Message")
+            state = gr.State([])
 
     # Main logic handler
     def respond(message, chat_history, model_choice, api_key):
         reply, chat_history = get_response(message, chat_history, model_choice, api_key)
         return chat_history, chat_history
 
+    msg.submit(
+        respond,
+        [msg, state, model_choice, api_key_input],
+        [chatbot, state]
+    )
 
 app.launch()
