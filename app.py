@@ -21,7 +21,7 @@ def get_response(message, chat_history, model_choice, api_key):
 
     chat_history.append({"role":"assistant","content": reply})
     print("Chat",chat_history)
-    return chat_history
+    return reply,chat_history
 # Gradio app
 with gr.Blocks(css=custom_css) as app:
     with gr.Row():
