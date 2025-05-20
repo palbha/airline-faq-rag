@@ -116,7 +116,7 @@ def generate_answer(message,model_choice,api_key):
     openai=OpenAI(
         base_url=config["url"],
         api_key=api_key,
-    ), config["name"]
+    )
     
 
     response = openai.chat.completions.create(
