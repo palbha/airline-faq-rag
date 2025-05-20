@@ -5,6 +5,24 @@ print(df)
 
 from openai import OpenAI
 #Feel free to use chatgpt or other models - Google offere free gemini api hence I have used this
+model_name = {
+    "OpenAI GPT-4": {
+        "name": "gpt-4",
+        "url": "https://api.openai.com/v1/"  # Replace with correct OpenAI base URL
+    },
+    "Gemini 1.5Flash": {
+        "name": "gemini-1.5-flash",
+        "url": "https://generativelanguage.googleapis.com/v1beta/"
+    },
+    "Gemini 2.0Flash": {
+        "name": "gemini-2.0-flash",
+        "url": "https://generativelanguage.googleapis.com/v1beta/"
+    },
+    "Together AI": {
+        "name": "mistralai/Mixtral-8x7B-Instruct-v0.1",
+        "url": "https://api.together.xyz/v1/"  # Replace with correct Together base URL
+    }
+}
 
 
 import pandas as pd
@@ -94,10 +112,12 @@ def generate_answer(message,model_choice,api_key):
             "content": f"Context:\n{context_text}\n\nQuestion: {message}\nAnswer:"
         }
     ]
-    openai = OpenAI(
-       base_url="https://generativelanguage.googleapis.com/v1beta/",
-      api_key=api_key,
-    )
+    config = model_name[model_choice]
+    openai=OpenAI(
+        base_url=config["url"],
+        api_key=api_key,
+    ), config["name"]
+    
 
     response = openai.chat.completions.create(
         model="gemini-1.5-flash",
