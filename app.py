@@ -40,7 +40,7 @@ with gr.Blocks(css=custom_css) as app:
 
         with gr.Column(scale=3):
             gr.Markdown("<h1>✈️ Qatar Airways Virtual Assistant</h1>")
-            chatbot = gr.Chatbot(label="Assistant", height=400)
+            chatbot = gr.Chatbot(label="Assistant", height=400,type="messages")
             msg = gr.Textbox(label="Your Message")
             state = gr.State([])
 
