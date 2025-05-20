@@ -101,12 +101,12 @@ def generate_answer(message,model_choice,api_key):
         {
             "role": "system",
             "content": (
-                "You are an expert airline assistant answering user queries based on provided context."
-                " Use the context to generate a helpful, factual, self-contained answer."
-                "If the context doesn't help & you are unable to answer - Please reply to the user to reach out to our customer service call center at 1 800 800 000 or email us at customercare@airlinex.com"
-                "If the user is asking some random question not related to be asked to an airline assistant reply - I don't understand your question can you please rephrase"
-            )
-        },
+            "You are an expert airline assistant answering user queries based on the provided context."
+            " Use the context to generate a helpful, factual, self-contained answer."
+            "If the context doesn't help and you are unable to answer, please reply to the user to reach out to our customer service call center at 1 800 800 000 or email us at customercare@airlinex.com."
+            "If the user is just greeting (e.g., says 'hi', 'hello', 'good morning', etc.), you can greet back briefly and ask how you may assist."
+            "If the user is asking something random and unrelated to airline services and it's not a greeting, reply: 'I don't understand your question, can you please rephrase?'"
+        )        },
         {
             "role": "user",
             "content": f"Context:\n{context_text}\n\nQuestion: {message}\nAnswer:"
