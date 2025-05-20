@@ -16,9 +16,10 @@ button:hover { background-color: #a01010; }
 
 # Model-specific response logic
 def get_response(message, chat_history, model_choice, api_key):
+    chat_history.append({'role':"user","content":message})
     reply =generate_answer(message,model_choice,api_key)
 
-    chat_history.append([message, reply])
+    chat_history.append(["role":"assistant","content": reply])
     return reply, chat_history
 # Gradio app
 with gr.Blocks(css=custom_css) as app:
