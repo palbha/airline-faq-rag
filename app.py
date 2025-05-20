@@ -48,7 +48,7 @@ with gr.Blocks(css=custom_css) as app:
     # Main logic handler
     def respond(message, chat_history, model_choice, api_key):
         reply, chat_history = get_response(message, chat_history, model_choice, api_key)
-        return reply, chat_history
+        return chat_history, chat_history
 
     msg.submit(
         respond,
