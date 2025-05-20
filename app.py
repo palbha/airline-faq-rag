@@ -23,7 +23,7 @@ def get_response(message, chat_history, model_choice, api_key):
     print("Chat",chat_history)
     return chat_history
 # Gradio app
-with gr.Blocks(theme=gr.themes.Soft()) as demo:
+with gr.Blocks(theme=gr.themes.Soft()) as app:
     with gr.Row():
         with gr.Column(scale=4):
             chatbot = gr.Chatbot(label="Airline Assistant", height=400, type="messages")
