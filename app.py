@@ -70,15 +70,15 @@ def get_response(message, chat_history, model_choice, api_key):
     print("Chat",chat_history)
     return reply,chat_history
 # Gradio app
-with gr.Blocks(css=custom_css) as app:
+with gr.Blocks() as app:
     with gr.Row():
         with gr.Column(scale=1):
             gr.Markdown("## ⚙️ Model Configuration")
 
             model_choice = gr.Dropdown(
                 label="Choose Model",
-                choices=["OpenAI GPT-4", "Gemini Pro", "Together AI"],
-                value="OpenAI GPT-4"
+                choices=["OpenAI GPT-4",    "Gemini 1.5Flash",    "Gemini 2.0Flash",    "Together AI"],
+                value= "Gemini 1.5Flash"
             )
 
             api_key_input = gr.Textbox(
