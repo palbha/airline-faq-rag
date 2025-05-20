@@ -47,10 +47,5 @@ with gr.Blocks(theme=gr.themes.Soft()) as demo:
         reply, chat_history = get_response(message, chat_history, model_choice, api_key)
         return chat_history, chat_history
 
-    msg.submit(
-        respond,
-        [msg, state, model_choice, api_key_input],
-        [chatbot, state]
-    )
 
 app.launch()
