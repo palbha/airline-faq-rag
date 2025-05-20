@@ -93,7 +93,7 @@ with gr.Blocks() as app:
             msg = gr.Textbox(label="Your Message")
             state = gr.State([])
 
-        gr.Markdown("🔒 **Note:** Your API key is used only for this session and is not stored or logged.")
+    gr.Markdown("🔒 **Note:** Your API key is used only for this session and is not stored or logged.")
 
     # Main logic handler
     def respond(message, chat_history, model_choice, api_key):
